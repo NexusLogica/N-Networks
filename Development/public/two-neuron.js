@@ -1,10 +1,10 @@
 N.Template(
-  { "add-neurons": "/neurons/add-simple.js"  },
+  { "fast-spiking": "/neurons/fast-spiking-1.js"  },
   function(root, self, imports, compiler) {
     var config = {
       "className": 'N.Network',
       "name": "Hello World",
-      "build": [ { id: "add-neurons", args: [] } ]
+      "build": [ { id: "fast-spiking", args: [] } ]
     };
 
     _.merge(self, config);
