@@ -14,7 +14,7 @@ N.Template(
         }
       }]
     };
-    console.log('*****************');
+
     context.self.neurons = context.self.neurons || [];
     context.self.neurons.push(neuron);
   }
