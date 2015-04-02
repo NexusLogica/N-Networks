@@ -1,7 +1,6 @@
 N.Template(
   {},
   function(root, self, imports, compiler) {
-    debugger;
     self.neurons = self.neurons || [];
     var neuron = {
       className: 'N.Neuron',
