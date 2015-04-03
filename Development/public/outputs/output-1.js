@@ -9,7 +9,7 @@ N.Template(
       signalPoints: signalPoints
     };
 
-    context.self.inputs = context.self.inputs || [];
-    context.self.inputs.push(output);
+    context.self.outputs = context.self.outputs || [];
+    context.self.outputs.push(output);
   }
 );
