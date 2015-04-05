@@ -12,7 +12,7 @@ N.Template(
       "build": [
         { template: "source", args: ['SRC'] },
         { template: "sink", args: ['SNK'] },
-        { template: "fast-depressing", args: [ ':SRC>OP', ':SNK>IP' ] },
+        { template: "fast-depressing", args: [ ':SRC>OP', ':SNK>IP' ] }
       ]
     };
 

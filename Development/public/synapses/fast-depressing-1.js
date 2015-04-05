@@ -1,5 +1,4 @@
-N.ConnectionTemplate(
-  {},
+N.ConnectionTemplate({},
   function(context, from, to) {
     var connection = {
       className: 'N.Connection',
@@ -7,7 +6,7 @@ N.ConnectionTemplate(
       description: 'Fast depressing synapse inibitory synapse - logic equivalent 1.0',
       reference: 'https://www.evernote.com/shard/s211/nl/22441192/f0c99229-3113-499d-a2e5-cc461a5646a8/',
       path: from + '->' + to,
-      threshold: 20.0, // nominally mV
+      threshold: 2.0, // nominally mV
       previousActivationStart: -100, // ms
       previousActivationEnd: -25, // ms
       gainDropOff: 10.0/25.0, // 10mv/25ms

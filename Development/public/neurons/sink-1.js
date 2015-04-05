@@ -7,11 +7,7 @@ N.Template(
       description: 'Simple sink neuron - logic equivalent',
       compartments: [{
         className: 'N.Comp.OutputSink',
-        name: 'IP',
-        update: function(time) {
-          this.outputStore.appendData(time, this.output);
-          return this.output;
-        }
+        name: 'IP'
       }]
     };
 
