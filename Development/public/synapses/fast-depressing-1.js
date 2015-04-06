@@ -7,31 +7,27 @@ N.ConnectionTemplate({},
       reference: 'https://www.evernote.com/shard/s211/nl/22441192/f0c99229-3113-499d-a2e5-cc461a5646a8/',
       path: from + '->' + to,
       threshold: 2.0, // nominally mV
-      previousActivationStart: -100, // ms
-      previousActivationEnd: -25, // ms
-      gainDropOff: 10.0/25.0, // 10mv/25ms
-      gainMin: 3.0, // minimum gain
-      gainDropOffTime: 15, // ms
-      minimumOffTime: 10, // ms - time with input below threshold before synapse 'resets'
+      activationStart: -100, // ms
+      gainVarying: 10.0, // 10mv/25ms
+      gainConstant: 3.0, // minimum gain
+      timeConstant: 0.87055057, // drop off rate per ms. 0.87055057 is 10 ms half life
       active: false,
       delay: 1, // ms
       update: function(time) {
-        var current = this.source.getOutputAt(time-this.delay);
+        var input = this.source.getOutputAt(time-this.delay);
         if(this.active) {
-          if(current < this.threshold) {
-            this.previousActivationEnd = time;
+          if(input < this.threshold) {
             this.active = false;
             this.output = 0.0;
           } else {
             // The function for determining output.
-            this.output = current*(
-              (this.gainDropOff*this.gainDropOffTime-this.gainMin)*(time-this.previousActivationStart)
-              +this.gainMin);
+            this.output = (this.gainVarying*Math.pow(this.timeConstant, time-this.activationStart)+this.gainConstant)*(input-this.threshold);
           }
         } else {
-          if(current >= this.threshold) {
-            this.previousActivationStart = time;
-            this.output = this.gainDropOff*this.gainDropOffTime*this.gainMin*current;
+          if(input >= this.threshold) {
+            this.activationStart = time;
+            this.output = (this.gainVarying+this.gainConstant)*(input-this.threshold);
+            this.active = true;
           }
         }
 
