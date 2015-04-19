@@ -8,7 +8,7 @@ N.Template(
   function(context) {
     var config = {
       "className": 'N.Network',
-      "name": "SYN-TEST",
+      "name": "SYNAPSE-TEST",
       "description": "Fast depressing inhibitory synapse test network",
       "build": [
         { template: "source", args: ['SRC'] },
