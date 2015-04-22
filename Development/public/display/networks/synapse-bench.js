@@ -4,20 +4,23 @@ N.Template({},
       className: 'N.UI.PiNetwork',
       width: 1.0,
       height: 2.5,
+      grid: { display: true, spacing: 0.05 },
+      backgroundColor: '#FF0000',
       neurons: [{
-        name: src,
+        name: "SRC",
         x: 0.5,
         y: 0.75,
-        radius: 0.39
+        radius: 0.25
       },{
         name: sink,
         x: 0.5,
         y: 1.75,
-        radius: 0.35
+        radius: 0.175
       }],
-      connections: [
-
-      ],
+      connections: [{
+        name: ":" + src + ">OP->:" + sink + ">IP",
+        route: "s"
+      }],
       renderMappings: {
         'columnSpacing': 0.3,
         'rowSpacing': 0.3,
