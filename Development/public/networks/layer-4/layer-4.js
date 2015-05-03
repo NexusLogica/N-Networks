@@ -14,7 +14,7 @@ N.Template(
           "template": "display-include"
       }],
       "build": [
-        { template: "rs", args: ['RS'] },
+        { template: "rs", args: ['RS', 2] },
         { template: "pyr", args: ['PYR'] }
       ]
     };

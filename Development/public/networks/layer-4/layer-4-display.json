@@ -8,13 +8,17 @@
     "spacing": 0.05
   },
   "backgroundColor": "#000000",
-  "neurons": [
-    {
-      "name": "RS",
-      "x": 0.5,
-      "y": 0.75,
-      "radius": 0.35
-    },{
+  "neurons": [{
+    "name": "RS[0]",
+    "x": 0.5,
+    "y": 0.75,
+    "radius": 0.35
+  },{
+    "name": "RS[1]",
+    "x": 0.5,
+    "y": 1.75,
+    "radius": 0.35
+  },{
       "name": "PYR",
       "x": 2.5,
       "y": 0.75,
