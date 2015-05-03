@@ -1,6 +1,6 @@
 N.Template(
   {},
-  function(context) {
+  function(context, name, num) {
     var neuron = {
       className: 'N.Neuron',
       name: 'PYR',
@@ -32,6 +32,12 @@ N.Template(
       }]
     };
     context.self.neurons = context.self.neurons || [];
-    context.self.neurons.push(neuron);
+
+    var total = num || 1;
+    for(var i=0; i<total; i++) {
+      var child = _.cloneDeep(neuron);
+      child.name = num ? name+'['+i+']' : name;
+      context.self.neurons.push(child);
+    }
   }
 );

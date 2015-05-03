@@ -1,0 +1,70 @@
+{
+  "className": "N.UI.PiNetwork",
+  "width": 4,
+  "height": 2.5,
+  "labelFontSize": 0.06,
+  "grid": {
+    "display": true,
+    "spacing": 0.05
+  },
+  "backgroundColor": "#000000",
+  "neurons": [{
+    "name": "RS[0]",
+    "x": 0.5,
+    "y": 0.75,
+    "radius": 0.35
+  },{
+    "name": "RS[1]",
+    "x": 0.5,
+    "y": 1.75,
+    "radius": 0.35
+  },{
+      "name": "PYR",
+      "x": 2.5,
+      "y": 0.75,
+      "radius": 0.5
+    }
+  ],
+  "connections": {
+  },
+  "renderMappings": {
+    "columnSpacing": 0.3,
+    "rowSpacing": 0.3,
+    "PYR": {
+      "template": "N.UI.StandardNeuronTemplates.Pyramidal",
+      "radius": 0.5
+    },
+    "RS": {
+      "template": "N.UI.StandardNeuronTemplates.Stellate",
+      "radius": 0.3
+    },
+    "IN": {
+      "template": "N.UI.StandardNeuronTemplates.InhibitoryInterneuron",
+      "radius": 0.3
+    },
+    "SRC": {
+      "template": "N.UI.StandardNeuronTemplates.InputSource",
+      "radius": 0.2
+    },
+    "IP": {
+      "template": "N.UI.StandardNeuronTemplates.InputSource",
+      "radius": 0.2
+    },
+    "SNK": {
+      "template": "N.UI.StandardNeuronTemplates.OutputSink",
+      "radius": 0.2
+    },
+    "OP": {
+      "template": "N.UI.StandardNeuronTemplates.OutputSink",
+      "radius": 0.2
+    },
+    "RN": {
+      "template": "N.UI.StandardNeuronTemplates.ExcitatoryInterneuron",
+      "radius": 0.3
+    },
+    "Default": {
+      "template": "N.UI.StandardNeuronTemplates.ExcitatoryInterneuron",
+      "radius": 0.2
+    }
+  }
+}
