@@ -5,7 +5,7 @@ N.Template(
     "display-include": "/networks/layer-4/layer-4-display.json"
   },
   function(context) {
-    var config = {
+    var network = {
       "className": 'N.Network',
       "name": "LAYER-4",
       "description": "Layer 4 cortical network",
@@ -19,8 +19,11 @@ N.Template(
       ]
     };
 
-    _.merge(context.self, config);
+    debugger;
+    var networkContext = { compiler: context.compiler, imports: context.imports, root: context.root, self: network };
+    context.compiler.buildOut(networkContext);
 
-    context.compiler.buildOut(context);
+    context.self.networks = context.self.networks || [];
+    context.self.networks.push(network);
   }
 );
