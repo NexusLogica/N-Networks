@@ -4,18 +4,18 @@ N.Template(
     "l3": "/networks/layer-3/layer-3.js",
     "display-include": "/networks/layers-3-4/layers-3-4-display.json"
   },
-  function(context) {
+  function(context, name) {
     var config = {
       "className": 'N.Network',
-      "name": "LAYER-3-4",
+      "name": name || "LAYER-3-4",
       "description": "Layers 3 and 4 cortical network",
       "include": [{
           "target": "display",
           "template": "display-include"
       }],
       "build": [
-        { template: "l4", args: ['LAYER-4'] },
-        { template: "l3", args: ['LAYER-3'] }
+        { template: "l4", args: ['L4'] },
+        { template: "l3", args: ['L3'] }
       ]
     };
 

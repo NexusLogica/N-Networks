@@ -2,16 +2,16 @@ N.Template(
   {
     "rs": "/neurons/stellate-1.js",
     "pyr": "/neurons/pyramidal-1.js",
-    "display-include": "/networks/layer-4/layer-4-display.json"
+    "display-include4": "/networks/layer-4/layer-4-display.json"
   },
-  function(context) {
+  function(context, name) {
     var network = {
       "className": 'N.Network',
-      "name": "LAYER-4",
+      "name": name || "L4",
       "description": "Layer 4 cortical network",
       "include": [{
           "target": "display",
-          "template": "display-include"
+          "template": "display-include4"
       }],
       "build": [
         { template: "rs", args: ['RS', 2] },
@@ -19,8 +19,7 @@ N.Template(
       ]
     };
 
-    debugger;
-    var networkContext = { compiler: context.compiler, imports: context.imports, root: context.root, self: network };
+    var networkContext =  { compiler: context.compiler, loadedImports: context.loadedImports, imports: context.imports, root: context.root, self: network };
     context.compiler.buildOut(networkContext);
 
     context.self.networks = context.self.networks || [];

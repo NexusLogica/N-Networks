@@ -1,7 +1,7 @@
 {
   "className": "N.UI.PiNetwork",
   "width": 4,
-  "height": 2.5,
+  "height": 2.3,
   "labelFontSize": 0.06,
   "grid": {
     "display": true,
