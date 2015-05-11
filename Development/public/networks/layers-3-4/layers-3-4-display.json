@@ -1,26 +1,28 @@
 {
   "className": "N.UI.PiNetwork",
   "width": 4.3,
-  "height": 4.2,
-  "labelFontSize": 0.06,
+  "height": 4.0,
+  "labelFontSize": 0.1,
   "grid": {
     "display": true,
     "spacing": 0.05
   },
-  "backgroundColor": "#FAFAFA",
-  "networks": [{
-    "name": "L3",
-    "x": 0.2,
-    "y": 0.1,
-    "backgroundColor": "#F3F3F3"
-  },{
-    "name": "L4",
-    "x": 0.2,
-    "y": 1.7,
-    "backgroundColor": "#F3F3F3"
-  }],
-  "connections": {
-  },
+  "backgroundColor": "#efeeea",
+  "networks": [
+    {
+      "name": "L3",
+      "x": 0.2,
+      "y": 0.2,
+      "backgroundColor": "#f8f7f1"
+    },
+    {
+      "name": "L4",
+      "x": 0.2,
+      "y": 1.7,
+      "backgroundColor": "#f1f2f7"
+    }
+  ],
+  "connections": {},
   "renderMappings": {
     "columnSpacing": 0.3,
     "rowSpacing": 0.3,

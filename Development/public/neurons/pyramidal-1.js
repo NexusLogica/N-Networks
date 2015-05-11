@@ -7,7 +7,16 @@ N.Template(
       description: 'A pyramidal neuron - logic equivalent',
       compartments: [{
         className: 'N.Comp.LinearSummingInput',
-        name: 'IP',
+        name: 'APTI',
+        description: 'Proximal basal dendritic input compartment',
+        update: function(time) {
+          this.outputStore.appendData(time, this.output);
+          return this.output;
+        }
+      },{
+        className: 'N.Comp.LinearSummingInput',
+        name: 'PBI',
+        description: 'Proximal basal dendritic input compartment',
         update: function(time) {
           this.outputStore.appendData(time, this.output);
           return this.output;

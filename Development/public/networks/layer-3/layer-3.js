@@ -1,6 +1,7 @@
 N.Template(
   {
     "pyr": "/neurons/pyramidal-1.js",
+    "syn-excitatory": "/synapses/excitatory-1.js",
     "display-include3": "/networks/layer-3/layer-3-display.json"
   },
   function(context, name) {
@@ -13,7 +14,8 @@ N.Template(
           "template": "display-include3"
       }],
       "build": [
-        { template: "pyr", args: ['PYR', 2] }
+        { template: "pyr", args: ['PYR', 2] },
+        { template: "syn-excitatory", args: [ ':PYR[0]>OP', ':PYR[1]>PBI' ] }
       ]
     };
 

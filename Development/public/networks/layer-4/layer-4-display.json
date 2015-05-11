@@ -2,12 +2,12 @@
   "className": "N.UI.PiNetwork",
   "width": 4,
   "height": 2.3,
-  "labelFontSize": 0.06,
+  "labelFontSize": 0.1,
   "grid": {
     "display": true,
     "spacing": 0.05
   },
-  "backgroundColor": "#000000",
+  "backgroundColor": "#FFFFFF",
   "neurons": [{
     "name": "RS[0]",
     "x": 0.5,
