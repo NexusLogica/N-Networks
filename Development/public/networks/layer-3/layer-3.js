@@ -15,7 +15,7 @@ N.Template(
       }],
       "build": [
         { template: "pyr", args: ['PYR', 2] },
-        { template: "syn-excitatory", args: [ ':PYR[0]>OP', ':PYR[1]>PBI' ] }
+        { template: "syn-excitatory", args: [ ':PYR[0]>OP', ':PYR[1]>PBI', { category: 'Spine' } ] }
       ]
     };
 

@@ -1,5 +1,5 @@
 N.ConnectionTemplate({},
-  function(context, from, to) {
+  function(context, from, to, properties) {
     var connection = {
       className: 'N.Connection',
       name: 'FD',
@@ -35,6 +35,9 @@ N.ConnectionTemplate({},
       }
 
     };
+
+    _.merge(connection, properties);
+
     context.self.connections = context.self.connections || [];
     context.self.connections.push(connection);
   }
