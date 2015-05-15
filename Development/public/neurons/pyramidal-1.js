@@ -15,6 +15,14 @@ N.Template(
         }
       },{
         className: 'N.Comp.LinearSummingInput',
+        name: 'ATI',
+        description: 'Apical dendritic trunk input compartment',
+        update: function(time) {
+          this.outputStore.appendData(time, this.output);
+          return this.output;
+        }
+      },{
+        className: 'N.Comp.LinearSummingInput',
         name: 'PBI',
         description: 'Proximal basal dendritic input compartment',
         update: function(time) {
