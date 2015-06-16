@@ -1,0 +1,156 @@
+{
+  "className": "N.UI.PiNetwork",
+  "width": 4.0,
+  "height": 4.9,
+  "labelFontSize": 0.1,
+  "grid": {
+    "display": true,
+    "spacing": 0.05
+  },
+  "backgroundColor": "#efeeea",
+  "networks": [
+    {
+      "name": "L1",
+      "x": 0.2,
+      "y": 0.2,
+      "backgroundColor": "#eaf3f4"
+    },
+    {
+      "name": "L3",
+      "x": 0.2,
+      "y": 1.1,
+      "backgroundColor": "#f8f7f1"
+    },
+    {
+      "name": "L4",
+      "x": 0.2,
+      "y": 2.6,
+      "backgroundColor": "#f1f2f7"
+    }
+  ],
+  "connections": {
+    "L4:RS[0]>OP->L3:PYR[1]>ATI": {
+      "route": {
+        "start": {
+          "component": "/LAYER-3-4/L4:RS[0]>OP",
+          "center": {
+            "x": 0.7000000000000001,
+            "y": 2.4499999999999997
+          },
+          "radius": 0.35
+        },
+        "points": [
+          {
+            "pos": {
+              "x": 0.7000000000000001,
+              "y": 2.9
+            }
+          },
+          {
+            "pos": {
+              "x": 1.75,
+              "y": 2.9
+            }
+          },
+          {
+            "pos": {
+              "x": 1.9500000000000002,
+              "y": 2.7
+            }
+          },
+          {
+            "pos": {
+              "x": 1.9500000000000002,
+              "y": 1.8
+            }
+          },
+          {
+            "pos": {
+              "x": 2.1,
+              "y": 1.6500000000000001
+            }
+          },
+          {
+            "pos": {
+              "x": 3,
+              "y": 1.6500000000000001
+            }
+          },
+          {
+            "pos": {
+              "x": 3.1,
+              "y": 1.55
+            }
+          },
+          {
+            "pos": {
+              "x": 3.1,
+              "y": 0.75
+            }
+          },
+          {
+            "pos": {
+              "x": 2.95,
+              "y": 0.6
+            }
+          },
+          {
+            "pos": {
+              "x": 2.8000000000000003,
+              "y": 0.6
+            }
+          }
+        ],
+        "end": {
+          "component": "/LAYER-3-4/L3:PYR[1]>ATI",
+          "center": {
+            "x": 2.1999999999999997,
+            "y": 0.9500000000000001
+          },
+          "radius": 0.5
+        }
+      },
+      "defaultCategory": "Excitatory"
+    }
+  },
+  "renderMappings": {
+    "columnSpacing": 0.3,
+    "rowSpacing": 0.3,
+    "PYR": {
+      "template": "N.UI.StandardNeuronTemplates.Pyramidal",
+      "radius": 0.5
+    },
+    "RS": {
+      "template": "N.UI.StandardNeuronTemplates.Stellate",
+      "radius": 0.3
+    },
+    "IN": {
+      "template": "N.UI.StandardNeuronTemplates.InhibitoryInterneuron",
+      "radius": 0.3
+    },
+    "SRC": {
+      "template": "N.UI.StandardNeuronTemplates.InputSource",
+      "radius": 0.2
+    },
+    "IP": {
+      "template": "N.UI.StandardNeuronTemplates.InputSource",
+      "radius": 0.2
+    },
+    "SNK": {
+      "template": "N.UI.StandardNeuronTemplates.OutputSink",
+      "radius": 0.2
+    },
+    "OP": {
+      "template": "N.UI.StandardNeuronTemplates.OutputSink",
+      "radius": 0.2
+    },
+    "RN": {
+      "template": "N.UI.StandardNeuronTemplates.ExcitatoryInterneuron",
+      "radius": 0.3
+    },
+    "Default": {
+      "template": "N.UI.StandardNeuronTemplates.ExcitatoryInterneuron",
+      "radius": 0.2
+    }
+  }
+}

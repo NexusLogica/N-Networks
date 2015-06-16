@@ -1,0 +1,110 @@
+    var N = {};
+
+    //*********************************************************************
+
+    // Create a new layer 1 network.
+    N.Layer1 = function(context) {
+
+      var create = function() {
+        var network = context.createEmptyNetwork("L1");
+        return network;
+      };
+
+      return {
+        create: create
+      }
+    };
+
+    //*********************************************************************
+
+    N.Column = function(context) {
+
+      var create = function(name) {
+        var column = context.createEmptyNetwork(name);
+        var l1 = context.make("layer1");
+        column.networks.push(l1.create());
+        return column;
+      };
+
+      return {
+        create: create
+      }
+    };
+
+    //*********************************************************************
+
+    N.MacroColumn = function(context) {
+
+      var create = function(name, numCols, colPrefix) {
+        var macroColumn = context.createEmptyNetwork(name);
+        var columnMaker = context.make('column');
+        for(var i=0; i< numCols; i++) {
+          var col = columnMaker.create(colPrefix+'['+i+']');
+          macroColumn.networks.push(col);
+        }
+        return macroColumn;
+      };
+
+      return {
+        create: create
+      }
+    };
+
+    //*********************************************************************
+
+    var FileSystem = function() {
+      this.byPath = {};
+      this.byName = {};
+    };
+
+    FileSystem.prototype.add = function(name, path, module) {
+      var definition = { name: name, path: path, module: module };
+      this.byPath[path] = definition;
+      this.byName[name] = definition;
+    };
+
+    //*********************************************************************
+
+    N.Context = function(fileSystem) {
+      this.fileSys = fileSystem;
+
+    };
+
+    N.Context.prototype.make = function(name) {
+      return this.fileSys.byName[name].module(this);
+    };
+
+    N.Context.prototype.createEmptyNetwork = function(name) {
+      return {
+        "className": 'N.Network',
+        "name": name,
+        "description": '',
+        "networks": [],
+        "neurons": [],
+        "connections": []
+      }
+    };
+
+    var build = function() {
+      var fileSys = new FileSystem();
+      fileSys.add("layer1", "networks/layer1.js", N.Layer1);
+      fileSys.add("column", "networks/column.js", N.Column);
+      fileSys.add("macroColumn", "networks/macro-column.js", N.MacroColumn);
+
+      var context = new N.Context(fileSys);
+
+      var macroColumnModule = context.make("macroColumn");
+      var column = macroColumnModule.create("MC[0]", 3, "P");
+      return column;
+    };
+
+    $(function() {
+      var output = build();
+      $("body").append("<pre>"+JSON.stringify(output, undefined, 2)+"</pre>")
+    });
+  </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,185 @@
+{
+  "className": "N.UI.PiNetwork",
+  "width": 4,
+  "height": 2.3,
+  "labelFontSize": 0.1,
+  "grid": {
+    "display": true,
+    "spacing": 0.05
+  },
+  "backgroundColor": "#FFFFFF",
+  "neurons": [
+    {
+      "name": "RS[0]",
+      "x": 0.5,
+      "y": 0.75,
+      "radius": 0.35
+    },
+    {
+      "name": "RS[1]",
+      "x": 0.5,
+      "y": 1.75,
+      "radius": 0.35
+    },
+    {
+      "name": "PYR",
+      "x": 2.5,
+      "y": 0.75,
+      "radius": 0.5
+    }
+  ],
+  "connections": {
+    ":RS[1]>OP->:PYR>PBI": {
+      "route": {
+        "start": {
+          "component": "/LAYER-3-4/L4:RS[1]>OP",
+          "center": {
+            "x": 0.5000000000000001,
+            "y": 1.7499999999999998
+          },
+          "radius": 0.35
+        },
+        "points": [
+          {
+            "pos": {
+              "x": 0.5000000000000001,
+              "y": 2.2
+            }
+          },
+          {
+            "pos": {
+              "x": 0.6,
+              "y": 2.250000000000001
+            }
+          },
+          {
+            "pos": {
+              "x": 1.7500000000000002,
+              "y": 2.250000000000001
+            }
+          },
+          {
+            "pos": {
+              "x": 2,
+              "y": 2.000000000000001
+            }
+          },
+          {
+            "pos": {
+              "x": 2,
+              "y": 1.3
+            }
+          }
+        ],
+        "end": {
+          "component": "/LAYER-3-4/L4:PYR>PBI",
+          "center": {
+            "x": 2.4999999999999996,
+            "y": 0.7499999999999998
+          },
+          "radius": 0.5
+        }
+      },
+      "defaultCategory": "Spine"
+    },
+    ":RS[0]>OP->:RS[1]>IP": {
+      "route": {
+        "start": {
+          "component": "/LAYER-3-4/L4:RS[0]>OP",
+          "center": {
+            "x": 0.5000000000000001,
+            "y": 0.7499999999999998
+          },
+          "radius": 0.35
+        },
+        "points": [
+          {
+            "pos": {
+              "x": 0.5000000000000001,
+              "y": 1.2
+            }
+          },
+          {
+            "pos": {
+              "x": 0.5000000000000001,
+              "y": 1.2500000000000002
+            }
+          },
+          {
+            "pos": {
+              "x": 0.55,
+              "y": 1.3
+            }
+          },
+          {
+            "pos": {
+              "x": 0.7500000000000001,
+              "y": 1.3
+            }
+          },
+          {
+            "pos": {
+              "x": 0.8,
+              "y": 1.3500000000000003
+            }
+          },
+          {
+            "pos": {
+              "x": 0.8,
+              "y": 1.4000000000000001
+            }
+          }
+        ],
+        "end": {
+          "component": "/LAYER-3-4/L4:RS[1]>IP",
+          "center": {
+            "x": 0.5000000000000001,
+            "y": 1.7499999999999998
+          },
+          "radius": 0.35
+        }
+      },
+      "defaultCategory": "Excitatory"
+    }
+  },
+  "renderMappings": {
+    "columnSpacing": 0.3,
+    "rowSpacing": 0.3,
+    "PYR": {
+      "template": "N.UI.StandardNeuronTemplates.Pyramidal",
+      "radius": 0.5
+    },
+    "RS": {
+      "template": "N.UI.StandardNeuronTemplates.Stellate",
+      "radius": 0.3
+    },
+    "IN": {
+      "template": "N.UI.StandardNeuronTemplates.InhibitoryInterneuron",
+      "radius": 0.3
+    },
+    "SRC": {
+      "template": "N.UI.StandardNeuronTemplates.InputSource",
+      "radius": 0.2
+    },
+    "IP": {
+      "template": "N.UI.StandardNeuronTemplates.InputSource",
+      "radius": 0.2
+    },
+    "SNK": {
+      "template": "N.UI.StandardNeuronTemplates.OutputSink",
+      "radius": 0.2
+    },
+    "OP": {
+      "template": "N.UI.StandardNeuronTemplates.OutputSink",
+      "radius": 0.2
+    },
+    "RN": {
+      "template": "N.UI.StandardNeuronTemplates.ExcitatoryInterneuron",
+      "radius": 0.3
+    },
+    "Default": {
+      "template": "N.UI.StandardNeuronTemplates.ExcitatoryInterneuron",
+      "radius": 0.2
+    }
+  }
+}
