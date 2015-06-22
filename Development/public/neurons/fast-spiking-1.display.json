@@ -1,0 +1,22 @@
+{
+  "radius": 0.2,
+  "compartments": [
+    {
+      "name": "OP",
+      "className": "inhibitory-body",
+      "dockAngles": [ { "from": 35.0, "to": 145.0 } ],
+      "labelCenter": { "r":0.94, "angle": 142 },
+      "segments": [
+        { "radius": 0.53, "startAngle": 150, "direction": 1, "facing": 1, "padding": 0.05 },
+        { "radius": 1.00, "startAngle": 30, "direction": 1, "facing": -1, "padding": 0.05 }]
+    },{
+      "name": "IP",
+      "className": "dendrites",
+      "dockAngles": [ { "from": 155.0, "to": 380.0 } ],
+      "labelCenter": { "r":0.94, "angle": 23 },
+      "segments": [
+        { "radius": 0.63, "startAngle": 150, "direction": 1, "facing": -1, "padding": 0.05 },
+        { "radius": 1.00, "startAngle": 390, "direction": -1, "facing": 1, "padding": 0.05 }]
+    }
+  ]
+}
