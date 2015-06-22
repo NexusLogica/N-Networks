@@ -1,0 +1,32 @@
+{
+  "className": "N.UI.PiNetwork",
+  "width": 4,
+  "height": 2.1,
+  "alignment": "center",
+  "labelFontSize": 0.1,
+  "grid": {
+    "display": true,
+    "spacing": 0.05
+  },
+  "backgroundColor": "#FFFFFF",
+  "neurons": [
+    {
+      "name": "PYR[0]",
+      "radius": 0.4,
+      "x": -0.9,
+      "y": 0.37
+    },{
+      "name": "PYR[1]",
+      "radius": 0.4,
+      "x": 0.0,
+      "y": 0.37
+    },{
+      "name": "PYR[2]",
+      "radius": 0.4,
+      "x": 0.9,
+      "y": 0.37
+    }
+  ],
+  "connections": {
+  }
+}

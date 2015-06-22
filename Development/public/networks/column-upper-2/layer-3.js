@@ -1,28 +1,22 @@
-N.Template(
-  {
-    "pyr": "/neurons/pyramidal-1.js",
-    "syn-excitatory": "/synapses/excitatory-1.js",
-    "display-include3": "/networks/layer-3/layer-3-display.json"
-  },
-  function(context, name) {
-    var network = {
-      "className": 'N.Network',
-      "name": name || "L3",
-      "description": "Layer 3 cortical network",
-      "include": [{
-          "target": "display",
-          "template": "display-include3"
-      }],
-      "build": [
-        { template: "pyr", args: ['PYR', 2] },
-        { template: "syn-excitatory", args: [ ':PYR[0]>OP', ':PYR[1]>PBI', { category: 'Spine' } ] }
-      ]
-    };
+// Create a new layer 1 network.
+N.Mod.Layer3 = function(context) {
 
-    var networkContext =  { compiler: context.compiler, loadedImports: context.loadedImports, imports: context.imports, root: context.root, self: network };
-    context.compiler.buildOut(networkContext);
+  var create = function(name) {
+    var network = context.createEmptyNetwork(name || "L3");
+    network.displaySource = '/networks/column-upper-2/layer-3.display.json';
 
-    context.self.networks = context.self.networks || [];
-    context.self.networks.push(network);
+    var pyrMod = context.makeModule('N.Mod.Pyramidal');
+    for(var i=0; i<5; i++) {
+      var pyr = pyrMod.create('PYR['+i+']');
+      network.neurons.push(pyr);
+    }
+
+    // Connect them.
+//    { template: "syn-excitatory", args: [ ':PYR[0]>OP', ':PYR[1]>PBI', { category: 'Spine' } ] }
+    return network;
+  };
+
+  return {
+    create: create
   }
-);
+};
