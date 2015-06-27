@@ -1,8 +1,7 @@
 {
   "className": "N.UI.PiNetwork",
-  "width": 4,
+  "width": 5,
   "height": 1.1,
-  "alignment": "center",
   "labelFontSize": 0.1,
   "grid": {
     "display": true,
@@ -13,13 +12,13 @@
     {
       "name": "FS[0]",
       "radius": 0.2,
-      "x": -0.35,
-      "y": 0.37
+      "x": 2.15,
+      "y": 0.35
     },{
       "name": "FS[1]",
       "radius": 0.2,
-      "x": 0.25,
-      "y": 0.37
+      "x": 2.75,
+      "y": 0.35
     }
   ],
   "connections": {

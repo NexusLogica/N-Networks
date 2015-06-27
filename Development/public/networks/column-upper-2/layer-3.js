@@ -1,4 +1,4 @@
-// Create a new layer 1 network.
+// Create a new layer 3 network.
 N.Mod.Layer3 = function(context) {
 
   var create = function(name) {
@@ -12,7 +12,10 @@ N.Mod.Layer3 = function(context) {
     }
 
     // Connect them.
-//    { template: "syn-excitatory", args: [ ':PYR[0]>OP', ':PYR[1]>PBI', { category: 'Spine' } ] }
+    var excitatory = context.makeModule('N.Mod.Synapse.Excitatory');
+    var connection = excitatory.create(':PYR[0]>OP', ':PYR[1]>PBI', 'Spine');
+    network.connections.push(connection);
+
     return network;
   };
 
