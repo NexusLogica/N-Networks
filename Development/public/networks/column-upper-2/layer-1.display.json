@@ -14,13 +14,13 @@
       "radius": 0.2,
       "x": 2.15,
       "y": 0.35
-    },{
+    },
+    {
       "name": "FS[1]",
       "radius": 0.2,
       "x": 2.75,
       "y": 0.35
     }
   ],
-  "connections": {
-  }
+  "connections": {}
 }

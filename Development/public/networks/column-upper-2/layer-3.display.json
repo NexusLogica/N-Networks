@@ -14,22 +14,26 @@
       "radius": 0.35,
       "x": 1.6,
       "y": 0.5
-    },{
+    },
+    {
       "name": "PYR[1]",
       "radius": 0.35,
       "x": 2.5,
       "y": 0.5
-    },{
+    },
+    {
       "name": "PYR[2]",
       "radius": 0.35,
       "x": 3.4,
       "y": 0.5
-    },{
+    },
+    {
       "name": "PYR[3]",
       "radius": 0.35,
       "x": 2.05,
       "y": 1.4
-    },{
+    },
+    {
       "name": "PYR[4]",
       "radius": 0.35,
       "x": 2.95,
@@ -37,6 +41,46 @@
     }
   ],
   "connections": {
-
+    ":PYR[0]>OP->:PYR[1]>PBI": {
+      "route": {
+        "start": {
+          "component": "/COL/L3:PYR[0]>OP",
+          "center": {
+            "x": 1.6,
+            "y": 0.5
+          },
+          "radius": 0.35
+        },
+        "points": [
+          {
+            "pos": {
+              "x": 1.6,
+              "y": 0.9500000000000002
+            }
+          },
+          {
+            "pos": {
+              "x": 1.75,
+              "y": 1
+            }
+          },
+          {
+            "pos": {
+              "x": 2,
+              "y": 0.8999999999999999
+            }
+          }
+        ],
+        "end": {
+          "component": "/COL/L3:PYR[1]>PBI",
+          "center": {
+            "x": 2.5,
+            "y": 0.5
+          },
+          "radius": 0.35
+        }
+      },
+      "defaultCategory": "Excitatory"
+    }
   }
 }
