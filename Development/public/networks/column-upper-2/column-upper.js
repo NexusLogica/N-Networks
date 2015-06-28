@@ -18,6 +18,12 @@ N.Mod.Column = function(context) {
     column.networks.push(l1.create());
     var l3 = context.makeModule("N.Mod.Layer3");
     column.networks.push(l3.create());
+
+    // Connections
+    var excitatory = context.makeModule('N.Mod.Synapse.Excitatory');
+    var connection = excitatory.create('L1:FS[0]>OP', 'L3:PYR[1]>ATI', 'Spine');
+    column.connections.push(connection);
+
     return column;
   };
 

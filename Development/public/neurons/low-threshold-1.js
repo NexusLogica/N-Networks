@@ -1,7 +1,7 @@
 N.Mod.LowThreshold = function(context) {
 
   var create = function(name) {
-    var neuron = context.createEmptyNeuron(name || "LT");
+    var neuron = context.createEmptyNeuron(name || "LTS");
     neuron.description = 'Low threshold inhibitory neuron - logic equivalent';
     neuron.displaySource = '/neurons/low-threshold-1.display.json';
 

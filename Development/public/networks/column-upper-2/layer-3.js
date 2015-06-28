@@ -11,6 +11,12 @@ N.Mod.Layer3 = function(context) {
       network.neurons.push(pyr);
     }
 
+    var ltsMod = context.makeModule('N.Mod.LowThreshold');
+    for(var i=0; i<2; i++) {
+      var lts = ltsMod.create('LTS['+i+']');
+      network.neurons.push(lts);
+    }
+
     // Connect them.
     var excitatory = context.makeModule('N.Mod.Synapse.Excitatory');
     var connection = excitatory.create(':PYR[0]>OP', ':PYR[1]>PBI', 'Spine');
