@@ -10,6 +10,13 @@ N.Mod.Layer1 = function(context) {
       var fs = fsMod.create('FS['+i+']');
       network.neurons.push(fs);
     }
+
+    var ltsMod = context.makeModule('N.Mod.LowThresholdSpiking');
+    for(i=0; i<2; i++) {
+      var lts = ltsMod.create('LTS['+i+']');
+      network.neurons.push(lts);
+    }
+
     return network;
   };
 

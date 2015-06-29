@@ -18,13 +18,13 @@
     {
       "name": "L3",
       "x": 0.2,
-      "y": 1.1,
+      "y": 1.0,
       "backgroundColor": "#f8f7f1"
     },
     {
       "name": "L4",
       "x": 0.2,
-      "y": 2.6,
+      "y": 3.95,
       "backgroundColor": "#f1f2f7"
     }
   ],

@@ -1,32 +1,37 @@
-N.Template(
-  {
-    "rs": "/neurons/stellate-1.js",
-    "pyr": "/neurons/pyramidal-1.js",
-    "syn-excitatory": "/synapses/excitatory-1.js",
-    "display-include4": "/networks/layer-4/layer-4-display.json"
-  },
-  function(context, name) {
-    var network = {
-      "className": 'N.Network',
-      "name": name || "L4",
-      "description": "Layer 4 cortical network",
-      "include": [{
-          "target": "display",
-          "template": "display-include4"
-      }],
-      "build": [
-        { template: "rs", args: ['RS', 2] },
-        { template: "pyr", args: ['PYR'] },
-        { template: "syn-excitatory", args: [ ':RS[0]>OP', ':PYR>PBI', { category: 'Spine' } ] },
-        { template: "syn-excitatory", args: [ ':RS[1]>OP', ':PYR>PBI', { category: 'Spine' } ] },
-        { template: "syn-excitatory", args: [ ':RS[0]>OP', ':RS[1]>IP', { category: 'Excitatory' } ] }
-      ]
-    };
+// Create a new layer 4 network.
+N.Mod.Layer4 = function(context) {
 
-    var networkContext =  { compiler: context.compiler, loadedImports: context.loadedImports, imports: context.imports, root: context.root, self: network };
-    context.compiler.buildOut(networkContext);
+  var create = function(name) {
+    var network = context.createEmptyNetwork(name || "L4");
+    network.displaySource = '/networks/column-upper-2/layer-4.display.json';
 
-    context.self.networks = context.self.networks || [];
-    context.self.networks.push(network);
+    var pyrMod = context.makeModule('N.Mod.Pyramidal');
+    for(var i=0; i<6; i++) {
+      var pyr = pyrMod.create('PYR['+i+']');
+      network.neurons.push(pyr);
+    }
+
+    var fsMod = context.makeModule('N.Mod.FastSpiking');
+    for(i=0; i<2; i++) {
+      var fs = fsMod.create('FS['+i+']');
+      network.neurons.push(fs);
+    }
+
+    var ltsMod = context.makeModule('N.Mod.LowThresholdSpiking');
+    for(i=0; i<2; i++) {
+      var lts = ltsMod.create('LTS['+i+']');
+      network.neurons.push(lts);
+    }
+
+    // Connect them.
+    var excitatory = context.makeModule('N.Mod.Synapse.Excitatory');
+    var connection = excitatory.create(':PYR[0]>OP', ':PYR[1]>PBI', 'Spine');
+    network.connections.push(connection);
+
+    return network;
+  };
+
+  return {
+    create: create
   }
-);
+};

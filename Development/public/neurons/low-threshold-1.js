@@ -1,4 +1,4 @@
-N.Mod.LowThreshold = function(context) {
+N.Mod.LowThresholdSpiking = function(context) {
 
   var create = function(name) {
     var neuron = context.createEmptyNeuron(name || "LTS");
