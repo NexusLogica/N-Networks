@@ -5,10 +5,10 @@ N.Mod.Layer4 = function(context) {
     var network = context.createEmptyNetwork(name || "L4");
     network.displaySource = '/networks/column-upper-2/layer-4.display.json';
 
-    var pyrMod = context.makeModule('N.Mod.Pyramidal');
-    for(var i=0; i<6; i++) {
-      var pyr = pyrMod.create('PYR['+i+']');
-      network.neurons.push(pyr);
+    var rsMod = context.makeModule('N.Mod.StellateRegularSpiking');
+    for(var i=0; i<7; i++) {
+      var rs = rsMod.create('RS['+i+']');
+      network.neurons.push(rs);
     }
 
     var fsMod = context.makeModule('N.Mod.FastSpiking');
@@ -24,9 +24,9 @@ N.Mod.Layer4 = function(context) {
     }
 
     // Connect them.
-    var excitatory = context.makeModule('N.Mod.Synapse.Excitatory');
-    var connection = excitatory.create(':PYR[0]>OP', ':PYR[1]>PBI', 'Spine');
-    network.connections.push(connection);
+    //var excitatory = context.makeModule('N.Mod.Synapse.Excitatory');
+    //var connection = excitatory.create(':PYR[0]>OP', ':PYR[1]>PBI', 'Spine');
+    //network.connections.push(connection);
 
     return network;
   };

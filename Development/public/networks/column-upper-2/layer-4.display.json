@@ -1,7 +1,7 @@
 {
   "className": "N.UI.PiNetwork",
   "width": 5,
-  "height": 2.95,
+  "height": 3.00,
   "labelFontSize": 0.1,
   "grid": {
     "display": true,
@@ -10,39 +10,45 @@
   "backgroundColor": "#FFFFFF",
   "neurons": [
     {
-      "name": "PYR[0]",
-      "radius": 0.35,
-      "x": 1.35,
+      "name": "RS[0]",
+      "radius": 0.3,
+      "x": 1.0,
       "y": 0.6
     },
     {
-      "name": "PYR[1]",
-      "radius": 0.35,
-      "x": 2.35,
+      "name": "RS[1]",
+      "radius": 0.3,
+      "x": 1.9,
       "y": 0.6
     },
     {
-      "name": "PYR[2]",
-      "radius": 0.35,
-      "x": 3.35,
+      "name": "RS[2]",
+      "radius": 0.3,
+      "x": 2.8,
       "y": 0.6
     },
     {
-      "name": "PYR[3]",
-      "radius": 0.35,
-      "x": 1.35,
+      "name": "RS[3]",
+      "radius": 0.3,
+      "x": 3.7,
+      "y": 0.6
+    },
+    {
+      "name": "RS[4]",
+      "radius": 0.3,
+      "x": 1.45,
       "y": 1.6
     },
     {
-      "name": "PYR[4]",
-      "radius": 0.35,
+      "name": "RS[5]",
+      "radius": 0.3,
       "x": 2.35,
       "y": 1.6
     },
     {
-      "name": "PYR[5]",
-      "radius": 0.35,
-      "x": 3.35,
+      "name": "RS[6]",
+      "radius": 0.3,
+      "x": 3.25,
       "y": 1.6
     },
     {
@@ -71,82 +77,6 @@
     }
   ],
   "connections": {
-    ":PYR[0]>OP->:PYR[1]>PBI": {
-      "route": {
-        "start": {
-          "component": "/COL/L3:PYR[0]>OP",
-          "center": {
-            "x": 1.6,
-            "y": 1.5
-          },
-          "radius": 0.35
-        },
-        "points": [
-          {
-            "pos": {
-              "x": 1.5999999999999999,
-              "y": 2
-            }
-          },
-          {
-            "pos": {
-              "x": 1.6500000000000001,
-              "y": 2.05
-            }
-          },
-          {
-            "pos": {
-              "x": 1.95,
-              "y": 2.05
-            }
-          },
-          {
-            "pos": {
-              "x": 2.0500000000000003,
-              "y": 1.9499999999999997
-            }
-          },
-          {
-            "pos": {
-              "x": 2.0500000000000003,
-              "y": 1.1500000000000004
-            }
-          },
-          {
-            "pos": {
-              "x": 2.2,
-              "y": 0.9499999999999997
-            }
-          },
-          {
-            "pos": {
-              "x": 2.8499999999999996,
-              "y": 0.9499999999999997
-            }
-          },
-          {
-            "pos": {
-              "x": 2.9,
-              "y": 1
-            }
-          },
-          {
-            "pos": {
-              "x": 2.9,
-              "y": 1.25
-            }
-          }
-        ],
-        "end": {
-          "component": "/COL/L3:PYR[1]>PBI",
-          "center": {
-            "x": 2.5,
-            "y": 1.5
-          },
-          "radius": 0.35
-        }
-      },
-      "defaultCategory": "Excitatory"
-    }
+    
   }
 }
