@@ -74,7 +74,7 @@
     ":PYR[0]>OP->:PYR[1]>PBI": {
       "route": {
         "start": {
-          "component": "/COL/L3:PYR[0]>OP",
+          "component": ":PYR[0]>OP",
           "center": {
             "x": 1.35,
             "y": 0.6
@@ -108,9 +108,50 @@
           }
         ],
         "end": {
-          "component": "/COL/L3:PYR[1]>PBI",
+          "component": ":PYR[1]>PBI",
           "center": {
             "x": 2.35,
+            "y": 0.6
+          },
+          "radius": 0.35
+        }
+      },
+      "defaultCategory": "Excitatory"
+    },
+    ":PYR[0]>OP->:PYR[2]>PBI": {
+      "route": {
+        "start": {
+          "component": "/COL/L3:PYR[0]>OP",
+          "center": {
+            "x": 1.35,
+            "y": 0.6
+          },
+          "radius": 0.35
+        },
+        "points": [
+          {
+            "pos": {
+              "x": 1.35,
+              "y": 1.0500000000000003
+            }
+          },
+          {
+            "pos": {
+              "x": 1.7500000000000002,
+              "y": 1.2500000000000004
+            }
+          },
+          {
+            "pos": {
+              "x": 2.9,
+              "y": 1.1999999999999997
+            }
+          }
+        ],
+        "end": {
+          "component": "/COL/L3:PYR[2]>PBI",
+          "center": {
+            "x": 3.35,
             "y": 0.6
           },
           "radius": 0.35

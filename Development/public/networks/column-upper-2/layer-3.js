@@ -2,11 +2,14 @@
 N.Mod.Layer3 = function(context) {
 
   var create = function(name) {
+    var numPyr = 6;
+    var j;
+
     var network = context.createEmptyNetwork(name || "L3");
     network.displaySource = '/networks/column-upper-2/layer-3.display.json';
 
     var pyrMod = context.makeModule('N.Mod.Pyramidal');
-    for(var i=0; i<6; i++) {
+    for(var i=0; i<numPyr; i++) {
       var pyr = pyrMod.create('PYR['+i+']');
       network.neurons.push(pyr);
     }
@@ -25,8 +28,14 @@ N.Mod.Layer3 = function(context) {
 
     // Connect them.
     var excitatory = context.makeModule('N.Mod.Synapse.Excitatory');
-    var connection = excitatory.create(':PYR[0]>OP', ':PYR[1]>PBI', 'Spine');
-    network.connections.push(connection);
+    for(i=0; i<numPyr; i++) {
+      for(j=0; j<numPyr; j++) {
+        if (i !== j) {
+          var connection = excitatory.create(':PYR[' + i + ']>OP', ':PYR[' + j + ']>PBI', 'Spine');
+          network.connections.push(connection);
+        }
+      }
+    }
 
     return network;
   };
