@@ -10,7 +10,10 @@ N.Mod.Column = function(context) {
       '/neurons/low-threshold-1.js',
       '/neurons/pyramidal-1.js',
       '/neurons/stellate-1.js',
-      '/synapses/excitatory-1.js'];
+      '/synapses/excitatory-1.js',
+      '/synapses/inhibitory-1.js',
+      '/synapses/fast-inhibitory-1.js',
+      '/synapses/slow-inhibitory-1.js'];
   };
 
   var create = function(name) {
@@ -24,8 +27,8 @@ N.Mod.Column = function(context) {
     column.networks.push(l4.create());
 
     // Connections
-    var excitatory = context.makeModule('N.Mod.Synapse.Excitatory');
-    var connection = excitatory.create('L1:FS[0]>OP', 'L3:PYR[1]>ATI', 'Spine');
+    var fastSyn = context.makeModule('N.Mod.Synapse.FastInhibitory');
+    var connection = fastSyn.create('L1:FS[0]>OP', 'L3:PYR[1]>ATI', 'FastInhibitory');
     column.connections.push(connection);
 
     return column;
