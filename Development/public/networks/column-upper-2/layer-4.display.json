@@ -1,8 +1,8 @@
 {
   "className": "N.UI.PiNetwork",
-  "width": 5,
-  "height": 3,
-  "labelFontSize": 0.1,
+  "width": 10,
+  "height": 6,
+  "labelFontSize": 0.2,
   "grid": {
     "display": true,
     "spacing": 0.05
@@ -11,69 +11,69 @@
   "neurons": [
     {
       "name": "RS[0]",
-      "radius": 0.3,
-      "x": 1,
-      "y": 0.6
+      "radius": 0.6,
+      "x": 2,
+      "y": 1.2
     },
     {
       "name": "RS[1]",
-      "radius": 0.3,
-      "x": 1.9,
-      "y": 0.6
+      "radius": 0.6,
+      "x": 3.8,
+      "y": 1.2
     },
     {
       "name": "RS[2]",
-      "radius": 0.3,
-      "x": 2.8,
-      "y": 0.6
+      "radius": 0.6,
+      "x": 5.6,
+      "y": 1.2
     },
     {
       "name": "RS[3]",
-      "radius": 0.3,
-      "x": 3.7,
-      "y": 0.6
+      "radius": 0.6,
+      "x": 7.4,
+      "y": 1.2
     },
     {
       "name": "RS[4]",
-      "radius": 0.3,
-      "x": 1.45,
-      "y": 1.6
+      "radius": 0.6,
+      "x": 2.9,
+      "y": 3.2
     },
     {
       "name": "RS[5]",
-      "radius": 0.3,
-      "x": 2.35,
-      "y": 1.6
+      "radius": 0.6,
+      "x": 4.7,
+      "y": 3.2
     },
     {
       "name": "RS[6]",
-      "radius": 0.3,
-      "x": 3.25,
-      "y": 1.6
+      "radius": 0.6,
+      "x": 6.5,
+      "y": 3.2
     },
     {
       "name": "FS[0]",
-      "radius": 0.2,
-      "x": 1.35,
-      "y": 2.4
+      "radius": 0.4,
+      "x": 2.7,
+      "y": 4.8
     },
     {
       "name": "FS[1]",
-      "radius": 0.2,
-      "x": 1.95,
-      "y": 2.4
+      "radius": 0.4,
+      "x": 3.9,
+      "y": 4.8
     },
     {
       "name": "LTS[0]",
-      "radius": 0.21,
-      "x": 2.75,
-      "y": 2.5
+      "radius": 0.42,
+      "x": 5.25,
+      "y": 5
     },
     {
       "name": "LTS[1]",
-      "radius": 0.21,
-      "x": 3.35,
-      "y": 2.5
+      "radius": 0.42,
+      "x": 6.7,
+      "y": 5
     }
   ],
   "connections": {}

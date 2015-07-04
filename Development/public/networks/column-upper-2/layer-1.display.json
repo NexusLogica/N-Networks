@@ -1,8 +1,8 @@
 {
   "className": "N.UI.PiNetwork",
-  "width": 5,
-  "height": 1,
-  "labelFontSize": 0.1,
+  "width": 10,
+  "height": 2,
+  "labelFontSize": 0.2,
   "grid": {
     "display": true,
     "spacing": 0.05
@@ -11,27 +11,27 @@
   "neurons": [
     {
       "name": "FS[0]",
-      "radius": 0.2,
-      "x": 1.35,
-      "y": 0.35
+      "radius": 0.4,
+      "x": 2.7,
+      "y": 0.7
     },
     {
       "name": "FS[1]",
-      "radius": 0.2,
-      "x": 1.95,
-      "y": 0.35
+      "radius": 0.4,
+      "x": 3.9,
+      "y": 0.7
     },
     {
       "name": "LTS[0]",
-      "radius": 0.22,
-      "x": 2.75,
-      "y": 0.45
+      "radius": 0.44,
+      "x": 5.5,
+      "y": 0.9
     },
     {
       "name": "LTS[1]",
-      "radius": 0.22,
-      "x": 3.35,
-      "y": 0.45
+      "radius": 0.44,
+      "x": 6.7,
+      "y": 0.9
     }
   ],
   "connections": {}
